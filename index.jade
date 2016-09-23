@@ -1,0 +1,64 @@
+include _config.jade
+
++html5
+  +head('DW4', 'Palabras clave', 'Descripción')
+  
+  body(ng-app="dw4")
+    
+    .container: .c.tac: img(src="https://dragonbarbudo.com/dw4/dw4.svg", alt="Dragon Webeloper 4").mt2.mb2
+    .container: .c.tac: h1 Dragon Webeloper 4
+    
+    
+    +menu
+    
+    .container.t
+      - for(i=0; i<12; i++)
+        .c1.ct2.cm6.t.tooltip(title=".c1 .ct2 .cm6")
+          .onlyd 1
+          .onlyt 2
+          .onlym 6
+    .container.t
+      - for(i=0; i<12; i++)
+        .c1.g.t.tooltip(title=".c1 .g") 1
+    .container
+      .c6
+        -for(i=1;i<13;i++)
+          .container.t
+            div(class="c#{i}", title=".c#{i}").t.tooltip #{i}
+      .c6
+        -for(i=1;i<13;i++)
+          .container.t
+            div(class="c#{i} o#{12-i}", title=".c#{i} .o#{12-i}").t.tooltip #{i}
+    .container
+      .c6
+        -for(i=1;i<13;i++)
+          .container.t
+            div(class="c#{i}", title=".c#{i} .g").g.t.tooltip #{i}
+      .c6
+        -for(i=1;i<13;i++)
+          .container.t
+            div(class="c#{i} o#{12-i}", title=".c#{i} .o#{12-i} .g").g.t.tooltip #{i}
+            
+    .container.t.start.bottom.tooltip.bigger(title=".start .bottom")
+      .c2.t START BOTTOM
+    .container.t.middle.center.tooltip.bigger(title=".middle .center")
+      .c5.t MIDDLE CENTER
+    .container.t.end.top.tooltip.bigger(title=".end .top")
+      .c8.t END TOP    
+
+    .container.t.bigger
+      div#especifico.tooltip.t(title="#especifico") #especifico
+    
+    .container
+      .c10.g.o1
+        slick
+          div: img(src="http://placehold.it/400x100/00ddff").fluid
+          div: img(src="http://placehold.it/400x100/00aaff").fluid
+
+      
+      
+    .container(backstretch backstretch-images=" 'http://dl.dropbox.com/u/515046/www/garfield-interior.jpg'")
+      a(href="#").button.button-rounded.button-action.button-pill Hola
+
+  
+    +scripts
