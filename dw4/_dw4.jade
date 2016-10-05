@@ -43,21 +43,21 @@ mixin menu
       - each item in menuNav
         - if(item[2]==null)
           li
-            a(href="#{item[1]}")&attributes(item[3]) #{item[0]}
+            a(href="#{item[1]}")&attributes(item[3]) !{item[0]}
             - each subitem in menuNav
               - if(subitem[2] == item[1])
                 ul
                   - each subitem in menuNav
                     - if(subitem[2] == item[1])
                       li
-                        a(href="#{subitem[1]}")&attributes(subitem[3]) #{subitem[0]}
+                        a(href="#{subitem[1]}")&attributes(subitem[3]) !{subitem[0]}
                         - each subitemB in menuNav
                           - if(subitemB[2] == subitem[0])
                             ul
                               - each subitemB in menuNav
                                 - if(subitemB[2] == subitem[1])
                                   li
-                                    a(href="#{subitemB[1]}")&attributes(subitemB[3]) #{subitemB[0]}
+                                    a(href="#{subitemB[1]}")&attributes(subitemB[3]) !{subitemB[0]}
                             - break
                 - break
 
@@ -72,13 +72,13 @@ mixin form(_to, _subject , respuesta)
       if block
         block
       else
-        .c12.g: label
+        .c12.g
           input(type="text", placeholder="Nombre", name="Nombre" required)
-        .c12.g: label
+        .c12.g
           input(type="email", placeholder="Correo electrónico", name="Email", ng-model="email", required)
-        .c12.g: label
+        .c12.g
           input(type="text", placeholder="Teléfono", name="Telefono")
-        .c12.g: label
+        .c12.g
           textarea(placeholder="Su mensaje", name="Mensaje", required)
         .c12.g.tac
           button(type="submit").button.button-pill.button-primary

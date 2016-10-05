@@ -81,6 +81,30 @@
 
 
 
+//#######################
+// MANUAL
+.c(@cols){
+  @thesize: (100/12)*@cols+0%;
+  .box-sizing(border-box);
+  .flex-basis( @thesize);
+  max-width: @thesize;
+  &.g{
+    @thesize: ((100/12)*@cols)+0%;
+    .calc(flex-basis, @thesize ~'-' (@gutterWidth*2) );
+    .calc(max-width, @thesize ~'-' (@gutterWidth*2) );
+    margin-left: @gutterWidth;
+    margin-right: @gutterWidth;
+  }
+}
+.o(@cols) {
+  @thesize: ((100/12)*@cols)+0%;
+  margin-left: @thesize;
+  &.g{
+    @thesize: ((100/12)*@cols)+0%;
+    .calc(margin-left, @thesize ~'+' (@gutterWidth) );
+  }
+}
+
 
 //#######################
 // TABLET
